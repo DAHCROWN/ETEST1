@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RCF eTrial Test</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="icon" href="{{url_for('static', filename='img/logo.ico') }}" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="badge" style="padding: 0px">
+        <img src="{{url_for('static', filename='img/logo.png') }}" alt="LOgo" />
+      </div>
+      <div class="timer">00:00:00</div>
+    </div>
+    <div class="info-box">
+      WELCOME {{session['username']}}
+  </div>
+  <div class="info-box">
+    {{exam_id}}
+  </div>
+    <div class="test-section">
+      <div class="container">
+        <form>
+          <h2 style="margin-bottom: 30px">
+            4. ______________ is a not a programming Language?
+          </h2>
+          <label>
+            <input type="radio" name="radio" checked />
+            <span>HTML</span>
+          </label>
+          <label>
+            <input type="radio" name="radio" />
+            <span>CSS</span>
+          </label>
+          <label>
+            <input type="radio" name="radio" />
+            <span>Javascript</span>
+          </label>
+          <label>
+            <input type="radio" name="radio" checked />
+            <span>AngularJS</span>
+          </label>
+        </form>
+        <button class="que-btn" style="background-color: blue">Previous</button>
+        <button class="que-btn" style="background-color: green">Next</button>
+      </div>
+    </div>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Calculator</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="calculator">
+          <p id="title">RCF FUTMINNA</p>
+          <p id="tagline">electronic calculator</p>
+          <input type="text" disabled="disabled" id="answer" />
+          <div class="row">
+            <button class="ctrl">AC</button>
+            <button class="ctrl">CE</button>
+            <button>%</button>
+            <button>÷</button>
+          </div>
+          <div class="row">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>x</button>
+          </div>
+          <div class="row">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+          </div>
+          <div class="row">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="tall">+</button>
+          </div>
+          <div class="row">
+            <button>0</button>
+            <button>.</button>
+            <button>=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='js/jq.js') }}"></script>
+    <script src="{{url_for('static', filename='js/modal.js') }}"></script>
+  </body>
+</html>

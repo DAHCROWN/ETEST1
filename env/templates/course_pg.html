@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCF eTrial Test</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <link rel ="icon" href="{{url_for('static', filename='img/logo.ico') }}">
+</head>
+<body>
+    <div class="main-body">
+        <div class="selection-panel">
+            <div class="info-box">
+                WELCOME {{session['username']}}
+            </div>
+            <div class="badge">
+                <img src="{{url_for('static', filename='img/logo.png') }}" alt="RCF Logo">
+            </div>
+            <hr>
+            <h3 style="padding-left: 30px;">
+                Select Courses Of Your Choice
+            </h3>
+            <div class="selection-grid">
+                <a href="/instructions/1">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>MAT111</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/instructions/2">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>MAT112</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/instructions/3">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>CHM111</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/instructions/4">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>CHM112</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/instructions/5">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>CPT111</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/instructions/6">
+                    <div class="subject-tile">
+                        <img src="{{url_for('static', filename='img/logo.png') }}" src="_Icon">
+                        <div class="tile-info">
+                            <h4>PHY113</h4>
+                            <p>Atomic Structure, Radio activity...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+       
+    </div>
+    
+</body>
+</html>

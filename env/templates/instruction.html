@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCF eTrial Test</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+    <link rel ="icon" href="{{url_for('static', filename='img/logo.ico') }}">
+</head>
+<body>
+    <div class="main-body">
+        <div class="selection-panel">
+            <div class="badge">
+                <img src="{{url_for('static', filename='img/logo.png') }}" alt="RCF Logo">
+            </div>
+            <div class="info-box">
+                WELCOME {{session['username']}}
+            </div>
+            <div class="info-box">
+              {{exam}}
+            </div>
+            <hr>
+            <h3 style="padding-left: 30px;">
+                Course Instruction
+            </h3>
+            
+            <main>
+                <ol class="gradient-list">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.</li>
+                  <li>Curabitur in orci vel risus facilisis accumsan.</li>
+                  <li>Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.</li>
+                  <li>Aenean viverra dui quis leo lacinia fringilla.</li>
+                </ol>
+              </main>
+            <form method="POST" >
+            <button type="submit" class="quizStart">
+                Start Quiz
+            </button></form>
+        </div>
+       
+    </div>
+    
+</body>
+</html>

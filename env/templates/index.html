@@ -1,0 +1,31 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RCF eTrial Test</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="main-body">
+            <div class="signup-card">
+                <img src=" {{url_for('static', filename='img/logo.png') }}" alt="logo here" class="logo">
+                <form method="POST" class="signup-form">
+                    <input type="username" placeholder="USER ID" name="username" required>
+                    <input type="password" placeholder="OTP" name="otp" required>
+
+                    <button type="submit" class="login-btn">
+                        LOGIN
+                    </button>
+
+                    <p>
+                        <a href="#"> Didn't get OTP?</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        
+    </body>
+    </html>
