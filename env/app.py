@@ -28,17 +28,20 @@ def forbid():
 
 @app.route('/instructions/<string:exam_id>', methods =['POST', 'GET'])
 def instructions(exam_id):
+
     exam_ids= {'1': 'MAT111',
                 '2': 'MAT112',
                 '3': 'CHM111',
                 '4': 'CHM112',
                 '5': 'CPT111',
                 '6': 'PHY113'}
-    for this in exam_ids:
+    for this in exam_ids: 
         if this == exam_id:
-             return render_template('instruction.html', exam=exam_ids[this])
-    request.method == 'POST'
-        return redirect(url_for('exam', exam_id=exam)) 
+                if request.method == 'POST':
+                    return redirect(url_for('exam', exam_id=exam_ids[this])) 
+                else:
+                    return render_template('instruction.html', exam=exam_ids[this])
+
 
 @app.route('/exams/<string:exam_id>')
 def exam(exam_id):
