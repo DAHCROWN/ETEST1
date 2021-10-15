@@ -6,29 +6,37 @@ from flask_jwt_extended import (
 )
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'random'
-app.config['JWT_SECRET_KEY'] = 'TEST'
 jwt = JWTManager(app)
+app.config['SECRET_KEY'] = 'random'
+app.config['JWT_SECRET_KEY'] = "b'j\x98\xcc\x088\xe9m3\xe1\xde&\x850\xaf\xcb\x19"
+app.config['JWT_HEADER_NAME'] = "Authorization"
+app.config['JWT_HEADER_TYPE'] = "Bearer"
+app.config['JWT_TOKEN_LOCATION'] = ['headers', 'query_string']
+
 
 
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
+    headers = request.headers
     if request.method == 'POST':
         username = request.form['username']
         otp = request.form['otp']
         session['username'] = request.form['username']
         if request.form['otp'] == 'test':
             session['username'] = request.form['username']
-            access_token = create_access_token(identity={"user_id": username}), 302  
+            access_token = create_access_token(identity={"user_id": username})
+            return redirect(url_for('courses')), {"access_token": access_token}
         else:
-            return jsonify({"msg": "WRONG LOGIN DETAILS"})          
+            return render_template('index.html', error = "PLEASE ENTER VALID LOGIN DETAILS")
+            
     return render_template('index.html')
 
 @app.route('/courses')
 @jwt_required()
 def courses():
-    return render_template('course_pg.html')
+    user = get_jwt_identity()
+    return render_template('course_pg.html', user=user)
 
 @app.route('/admin')
 def forbid():
