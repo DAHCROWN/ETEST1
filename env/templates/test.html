@@ -14,7 +14,9 @@
       <div class="badge" style="padding: 0px">
         <img src="{{url_for('static', filename='img/logo.png') }}" alt="LOgo" />
       </div>
-      <div class="timer">00:00:00</div>
+      <div class="timer">
+        <h1>00:00:00 </h1>
+      </div>
     </div>
     <div class="info-box">
       WELCOME {{session['username']}}
@@ -98,6 +100,7 @@
       </div>
     </div>
     <script src="{{url_for('static', filename='js/jq.js') }}"></script>
+    <script src="{{url_for('static', filename='js/app.js') }}"></Script>
     <script src="{{url_for('static', filename='js/modal.js') }}"></script>
   </body>
 </html>
