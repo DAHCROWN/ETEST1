@@ -1,5 +1,5 @@
 let timeSecond = 30;
-const timeH = document.querySelector("timer");
+const timeH = document.querySelector("h1");
 
 displayTime(timeSecond);
 
