@@ -1,4 +1,4 @@
-let timeSecond = 30;
+let timeSecond = 5;
 const timeH = document.querySelector("h1");
 
 displayTime(timeSecond);
@@ -21,8 +21,24 @@ function displayTime(second) {
 }
 
 function endCount() {
-  timeH.innerHTML = "Time out";
-}
+    $("form[name=sign")
+      var $form = $(this);
+      var data = $form.serialize();
+      $.ajax({
+          url: "/logout",
+          type: "GET",
+          data: data,
+          dataType: "json",
+          success: function(resp) {
+              console.log(resp);
+          }
+
+      });
+
+      e.preventDefault();
+
+  }
+
 
 // *********************
 // This Code is for only the floating card in right bottom corner
