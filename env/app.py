@@ -1,5 +1,4 @@
 from flask import Flask, json,render_template,jsonify,request, redirect, url_for, session
-from examination.exam1 import exam_list
 from flask.helpers import make_response
 from werkzeug import wrappers
 from werkzeug.utils import redirect
@@ -34,37 +33,26 @@ def courses():
         return redirect(url_for('index'))
 
 @app.route('/instructions/<string:exam_id>', methods =['POST', 'GET'])
-
 def instructions(exam_id):
     if session['logged_in'] == True:
         exam_ids= {'1': 'MAT111',
                     '2': 'MAT112',
                     '3': 'CHM111',
                     '4': 'CHM112',
-                    '5': 'CPT111',
+                    '5': 'SAT117',
                     '6': 'PHY113'}
         for this in exam_ids: 
             if this == exam_id:
                     if request.method == 'POST':
-                        return redirect(url_for('exam', exam_id=exam_ids[this])) 
+                        exam_chosen = exam_ids[this]
+                        session['exam_chosen'] = exam_chosen
+                        return redirect(url_for('exam.fetch_exam', exam_id=exam_chosen)) 
                     else:
                         return render_template('instruction.html', exam=exam_ids[this])
     else:
         return redirect(url_for('index'))
 
-@app.route('/exams/<string:exam_id>')
-def exam(exam_id):
-    if session['logged_in'] == True:
-        return render_template('test.html', exam_id=exam_id)
-    else:
-        return redirect(url_for('index'))
 
-@app.route('/logout')
-def logout():
-    session.pop('username', None)
-    session['logged_in'] = False
-    return redirect(url_for('index'))
-    
 from examination import exam1
 app.register_blueprint(exam1.bp)
 

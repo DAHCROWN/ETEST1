@@ -24,32 +24,32 @@
       WELCOME {{session['username']}}
   </div>
   <div class="info-box">
-    {{exam_id}}
+    {{q_id['EXAM']}}
   </div>
   <div class="info-box">
-   <a href="{{url_for('logout')}}"> logout</a>
+   <a href="{{url_for('exam.logout')}}"> logout</a>
   </div>
     <div class="test-section">
       <div class="container">
-        <form>
+        <form method="POST" class="exams">
           <h2 style="margin-bottom: 30px">
-            4. ______________ is a not a programming Language?
+            {{q_id['question']}}
           </h2>
           <label>
             <input type="radio" name="radio" checked />
-            <span>HTML</span>
+            <span>{{q_id['optiona']}}</span>
           </label>
           <label>
             <input type="radio" name="radio" />
-            <span>CSS</span>
+            <span>{{q_id['optionb']}}</span>
           </label>
           <label>
             <input type="radio" name="radio" />
-            <span>Javascript</span>
+            <span>{{q_id['optionc']}}</span>
           </label>
           <label>
             <input type="radio" name="radio" checked />
-            <span>AngularJS</span>
+            <span>{{q_id['optiond']}}</span>
           </label>
         </form>
         <button class="que-btn" style="background-color: blue">Previous</button>

@@ -21,23 +21,10 @@ function displayTime(second) {
 }
 
 function endCount() {
-    $("form[name=sign")
-      var $form = $(this);
-      var data = $form.serialize();
-      $.ajax({
-          url: "/logout",
-          type: "GET",
-          data: data,
-          dataType: "json",
-          success: function(resp) {
-              console.log(resp);
-          }
 
-      });
+    
 
-      e.preventDefault();
-
-  }
+    }
 
 
 // *********************
